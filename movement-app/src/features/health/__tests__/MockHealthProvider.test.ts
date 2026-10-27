@@ -184,7 +184,7 @@ describe('MockHealthProvider', () => {
       assert.strictEqual(aggregate.unit, 'count');
       assert.ok(aggregate.buckets.length >= 2);
 
-      const totalSteps = aggregate.buckets.reduce((acc, b) => acc + b.value, 0);
+      const totalSteps = aggregate.buckets.reduce((acc: number, b) => acc + b.value, 0);
       assert.ok(totalSteps > 10000, 'Expected positive total steps across buckets');
 
       for (const bucket of aggregate.buckets) {

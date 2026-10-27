@@ -90,6 +90,7 @@ export class MockHealthProvider implements HealthProvider {
   private simulatedError: Error | null;
   private isInitialized: boolean = false;
   private openSettingsCount: number = 0;
+  private openInstallPageCount: number = 0;
 
   // Custom samples override store
   private customSamples: {
@@ -254,6 +255,13 @@ export class MockHealthProvider implements HealthProvider {
     this.openSettingsCount += 1;
   }
 
+  public async openInstallPage(): Promise<void> {
+    if (this.simulatedError) {
+      throw this.simulatedError;
+    }
+    this.openInstallPageCount += 1;
+  }
+
   // ==========================================
   // Test / Simulator Control Methods
   // ==========================================
@@ -299,6 +307,10 @@ export class MockHealthProvider implements HealthProvider {
     return this.openSettingsCount;
   }
 
+  public getInstallPageOpenCount(): number {
+    return this.openInstallPageCount;
+  }
+
   public getIsInitialized(): boolean {
     return this.isInitialized;
   }
@@ -310,6 +322,7 @@ export class MockHealthProvider implements HealthProvider {
     this.simulatedError = null;
     this.isInitialized = false;
     this.openSettingsCount = 0;
+    this.openInstallPageCount = 0;
     this.customSamples = {};
     this.setAllPermissions('GRANTED');
   }

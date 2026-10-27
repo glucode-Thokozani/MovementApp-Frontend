@@ -75,4 +75,11 @@ export interface HealthProvider {
    * Opens the system settings or Health Connect / Health app settings page.
    */
   openSettings(): Promise<void>;
+
+  /**
+   * Opens the platform store page to install or update the health provider
+   * (e.g. Google Play Store for Android Health Connect).
+   * Optional for platforms where the health provider is built into the OS (e.g. iOS HealthKit).
+   */
+  openInstallPage?(): Promise<void>;
 }

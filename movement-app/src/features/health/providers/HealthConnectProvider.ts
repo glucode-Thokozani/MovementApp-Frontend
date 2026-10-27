@@ -68,4 +68,8 @@ export class HealthConnectProvider implements HealthProvider {
   public async openSettings(): Promise<void> {
     // Will open Health Connect settings / permissions manager in Phase 6
   }
+
+  public async openInstallPage(): Promise<void> {
+    // Will open Google Play Store page for Health Connect in Phase 6
+  }
 }

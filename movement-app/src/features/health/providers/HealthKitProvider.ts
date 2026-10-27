@@ -69,4 +69,10 @@ export class HealthKitProvider implements HealthProvider {
   public async openSettings(): Promise<void> {
     // Will link to App Settings or Health app in Phase 6
   }
+
+  public async openInstallPage(): Promise<void> {
+    throw new HealthUnavailableError(
+      'Apple HealthKit is built into iOS and cannot be installed from the App Store.'
+    );
+  }
 }

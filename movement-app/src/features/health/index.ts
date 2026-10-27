@@ -12,3 +12,7 @@ export * from './providers/MockHealthProvider';
 export * from './providers/HealthKitProvider';
 export * from './providers/HealthConnectProvider';
 export * from './providers/createHealthProvider';
+
+// Services
+export * from './services/HealthAvailabilityService';
+export * from './services/HealthPermissionService';
