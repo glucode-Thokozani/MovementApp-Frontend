@@ -21,6 +21,7 @@
   },
   "scripts": {
     "postinstall": "node scripts/patch-expo-notifications.js",
+    "test": "node --no-warnings --experimental-strip-types --import ./scripts/test-loader.mjs --test src/features/health/__tests__/*.test.ts",
     "start": "expo start",
     "android": "expo run:android",
     "ios": "expo run:ios",
